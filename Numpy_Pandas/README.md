@@ -13,26 +13,26 @@
   - Cài đặt: `pip install numpy`
 - **Jupyter Notebook**: Môi trường phát triển tương tác
 
-## ⚙️ Cách hoạt động
+## Cách hoạt động
 
-### 1. Khái niệm cơ bản về NumPy
+### Khái niệm cơ bản về NumPy
 - NumPy là thư viện mảng (array) thay thế cho list Python thông thường
 - **Ưu điểm**: 
   - Tốc độ xử lý nhanh hơn
   - Nhiều hàm tích hợp sẵn cho AI/ML
   - Hỗ trợ tính toán vector hóa
 
-### 2. Tạo và chuyển đổi mảng
+### Tạo và chuyển đổi mảng
 - Chuyển đổi Python list sang NumPy array: `np.array()`
 - NumPy tự động chuyển đổi kiểu dữ liệu để đồng nhất
 - Chuyển đổi kiểu dữ liệu: `.astype()`
 
-### 3. Indexing và Slicing
+### Indexing và Slicing
 - **1D Array**: `array[start:end:step]`
 - **2D Array**: `array[row, col]` hoặc `array[row_index, col_index]`
 - **Fancy Indexing**: Sử dụng list để truy cập nhiều phần tử: `array[[index1, index2]]`
 
-### 4. Boolean Indexing
+### Boolean Indexing
 - Tạo điều kiện boolean: `array % 2 == 0`
 - Lọc dữ liệu: `array[condition]`
 - Kết hợp nhiều điều kiện: `&` (AND), `|` (OR)
