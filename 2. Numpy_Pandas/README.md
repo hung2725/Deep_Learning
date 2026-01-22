@@ -28,8 +28,8 @@
 - Chuyển đổi kiểu dữ liệu: `.astype()`
 
 ### Indexing và Slicing
-- **1D Array**: `array[start:end:step]`
-- **2D Array**: `array[row, col]` hoặc `array[row_index, col_index]`
+- **Mảng 1 chiều**: `array[start:end:step]`
+- **Mảng 2 chiều**: `array[row, col]` hoặc `array[row_index, col_index]`
 - **Fancy Indexing**: Sử dụng list để truy cập nhiều phần tử: `array[[index1, index2]]`
 
 ### Boolean Indexing
