@@ -5,7 +5,7 @@
 - **Môn học:** Giới Thiệu Học Sâu  
 - **Giảng viên:** Nguyễn Thái Anh  
 
-## RNN — Dự báo chuỗi thời gian bằng mạng nơ-ron hồi quy
+## RNN
 
 ### Công nghệ sử dụng
 
