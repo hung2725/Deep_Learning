@@ -5,7 +5,7 @@
 - **Môn học:** Giới Thiệu Học Sâu  
 - **Giảng viên:** Nguyễn Thái Anh
 
-## CNN - Phân loại ảnh với Data Augmentation và Xử lý dữ liệu mất cân bằng
+## CNN
 
 ### Công nghệ sử dụng
 - **Python 3**  
@@ -13,6 +13,8 @@
 - **Torchvision**
 - **Matplotlib**
 - **Numpy**
+- **Flask** (ứng dụng web phục vụ dự đoán ảnh)
+
 
 ## Bài tập về nhà
 
@@ -50,3 +52,43 @@
 **Kết quả:**
 - Mất mát giảm dần, đạt điểm cực tiểu 0.0746 với độ chính xác đạt gần **97.63%** trên tập huấn luyện.
 - Mô hình giữ nhịp phân loại trên tập test vô cùng xuất sắc với độ chính xác tuyệt đối ở mức **98.68%**. Giải pháp Augmented data bằng thư viện PyTorch Transforms rất tốt khi giải quyết được tập dữ liệu này.
+
+
+### Giao diện web — AI Vision
+
+Dự án kèm một **ứng dụng web** để thử nghiệm trực tiếp ba mô hình CNN đã huấn luyện, không cần chạy notebook.
+
+**Cách hoạt động:**
+- Backend dùng **Flask** (`app.py`): nạp trọng số từ các file `.pth` tương ứng (`cat_and_dog_model.pth`, `CIFAR10_model.pth`, `PlantVillage_model.pth`), tiền xử lý ảnh (resize, normalize ImageNet) và trả về nhãn dự đoán dạng JSON.
+- Giao diện nằm trong `templates/index.html`: layout dạng dashboard tối (glassmorphism), font Plus Jakarta Sans và icon Phosphor.
+- Sidebar cho phép chọn **ba chế độ** khớp với ba bài tập: **Chó & Mèo** (`catdog`), **CIFAR-10** (`cifar10`), **Plant Village** (`plant`).
+- Người dùng **tải ảnh lên** (click hoặc kéo thả vào vùng preview), bấm **Phân tích ngay**; frontend gửi `POST /predict` kèm `file` và `model_id`, hiển thị kết quả trong khung “Kết quả AI”.
+
+**Chạy thử:**
+1. Đặt các file trọng số `.pth` cùng thư mục với `app.py`
+2. Cài đặt phụ thuộc (Flask, PyTorch, Pillow, …) nếu chưa có.
+3. Chạy: `python app.py` — mặc định máy chủ phát triển lắng nghe cổng **5007** (`http://127.0.0.1:5007`).
+
+**Lưu ý:** Nếu thiếu file `.pth` cho một mô hình, chế độ đó sẽ không được nạp; chỉ các mô hình load thành công mới dùng được trên web.
+
+### Ảnh Demo Của Web
+#### Cat and dog
+![alt text](image.png)
+![alt text](image-1.png)
+![alt text](image-2.png)
+![alt text](image-3.png)
+
+#### CIFAR10
+![alt text](image-4.png)
+![alt text](image-5.png)
+![alt text](image-6.png)
+![alt text](image-7.png)
+![alt text](image-8.png)
+![alt text](image-9.png)
+![alt text](image-10.png)
+![alt text](image-11.png)
+![alt text](image-12.png)
+
+#### PlanVilage
+![alt text](image-13.png)
+![alt text](image-14.png)
